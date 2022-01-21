@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="/css/emp.css">
+
+<link rel="stylesheet" href="/css/user.css">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div id="container">
+
+<nav>
+ <div id="logo">
+  Payroll System
+ </div>
+ <ul>
+   <li><a href="/admin/home">Home</a></li>
+
+   <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="/admin/full">Add Academics</a></li>
+
+
+
+   <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="/admin/transactions">Transactions</a>
+   </li>
+   <li><a href="/admin/history">History</a></li>
+   <li><a href="/admin/attendence">Attendence</a></li>
+   <li><a href="/">Sign Out</a></li>
+ </ul>
+</nav>
+</div>
+
+
+
+
+
+
+  <div class = "emp">
+    <h1>
+      Transaction History
+    </h1>
+  </div>
+  <table class="table table-hover tableo">
+    <thead>
+      <tr>
+        <th class = "ent1" scope="col">TId</th>
+        <th class = "ent1" scope="col">EId</th>
+        <th class = "ent1" scope="col">Amount</th>
+        <th class = "ent1" scope="col">Month</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% let det = ['R&D','Production','Marketing','Human Resource','Finance and Accounting'] %>
+      <%for(let i =0;i<emp.length;i++){%>
+      <tr class="table-secondary">
+        <th class = "ent" scope="row"><%=emp[i].tid%></th>
+        <td class = "ent"><%=emp[i].eid%></td>
+        <td class = "ent"><%=emp[i].amount%></td>
+        <td class = "ent"><%=emp[i].month%></td>
+        
+        
+      </tr>
+      <%}%>
+      
+    
+    </tbody>
+  </table> 

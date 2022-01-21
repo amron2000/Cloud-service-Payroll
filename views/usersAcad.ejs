@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/css/user.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div id="container">
+
+ <nav>
+   <div id="logo">
+    Payroll System
+   </div>
+   <ul>
+     <li><a href="/user/home">Home</a></li>
+     <li><a href="/user/salary">Salary</a></li>
+     <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="/user/payment">Payment History</a>
+     </li>
+     <li><a href="/user/attendence">Attendence</a></li>
+     <li><a href="/">Sign Out</a></li>
+   </ul>
+ </nav>
+</div>
+
+
+
+  
+<div class = "emp">
+    <h1>
+      Academic Details
+    </h1>
+</div>
+<% let emp =  {'name':'Name', 'gender':'Gender', 'dob':'DOB','phone':'Phone','address':'Address'}%> 
+<div class="jumbotron jumboo1">
+    <h1>Personal</h1>
+    <table class="table table-hover tableo">
+           
+        <% for( let i in emp){%>
+          <tr>
+            <td class = 'tablei tablej' scope="row"><%=emp[i]%>:</th>
+            <td class = 'tablei'><%=list[i]%></td>
+          </tr>
+        <%}%>  
+          
+        
+          </tbody>
+     </table>
+       
+    
+  <!-- deleted items -->
+</div>
+<% let emp2 =  {'eid':'EId','doj':'DOJ'}%>
+<div class="jumbotron jumboo2">
+        <h1>Employment</h1>
+        <table class="table table-hover tableo">
+            <tbody>
+                <% for( let i in emp2){%>
+                    <tr>
+                      <td class = 'tablei tablej' scope="row"><%=emp2[i]%>:</th>
+                      <td class = 'tablei'><%=list[i]%></td>
+                    </tr>
+                  <%}%>  
+              </tbody>
+         </table>
+           
+        
+    
+    </div>
+    
+
+

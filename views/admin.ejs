@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="/css/user.css">
+
+       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <div id="container">
+
+      <nav>
+        <div id="logo">
+          Company
+        </div>
+        <ul>
+          <li><a href="/admin/home">Home</a></li>
+
+          <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="/admin/employees">Academics &nbsp;<i class="fa fa-caret-down"></i></a>
+            <div class="dd">
+              <div id="up_arrow"></div>
+            <ul>
+              
+              <li><a href="/admin/full">Full-time</a></li>
+              <li><a href="/admin/casual">Part-time</a></li>
+            </ul>
+            </div>
+          </li>
+
+
+
+          <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="/admin/transactions">Transactions &nbsp;<i class="fa fa-caret-down"></i></a>
+            <div class="dd">
+              <div id="up_arrow"></div>
+            <ul>
+              
+              <li><a href="#">2019</a></li>
+              <li><a href="#">2018</a></li>
+              <li><a href="#">2017</a></li>
+            </ul>
+            </div>
+          </li>
+          <li><a href="/admin/history">History</a></li>
+          <li><a href="/admin/attendence">Attendence</a></li>
+          <li class="dropdown"><a href="#">Others &nbsp;<i class="fa fa-caret-down"></i> </a>
+           <div class="dd">
+             <div id="u_a_c"><div id="up_arrow"></div></div>
+            <ul>
+              
+              <li><a href="#">DOCS</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">PROJECTS</a></li>
+            </ul>
+            </div>
+        </ul>
+      </nav>
+    </div>
+
+
+     <div class = "emp">
+      <h1>
+        Employees
+      </h1>
+    </div>
+  
+    <table class="table table-hover tableo">
+      <thead>
+        <tr>
+          <th class = "ent1" scope="col">id</th>
+          <th class = "ent1" scope="col">Name</th>
+          <th class = "ent1" scope="col">Type</th>
+          <th class = "ent1" scope="col">Designation</th>
+          <th class = "ent1" scope="col"></th>
+          <th class = "ent1" scope="col"></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% let det = ['Full-Time','Casual'] %>
+        <%for(let i =0;i<emp.length;i++){%>
+        <tr class="table-secondary">
+          <th class = "ent" scope="row"><%=emp[i].eid%></th>
+          <td class = "ent"><%=emp[i].name%></td>
+          <td class = "ent"><%=det[emp[i].dno-1]%></td>
+          <td class = "ent"><%=emp[i].designation%></td>
+          <% let v = {id:emp[i]._id,sid:emp[i].sid,did:emp[i].did}%>
+          <td class = "ent"><a href="view/?id=<%=emp[i].eid%>">view</a>
+          </td>
+          
+          <td class = "ent"><a href="/delete/?id=<%=emp[i]._id%>">delete</a> </td>
+          
+        </tr>
+        <%}%>
+        
+      
+      </tbody>
+    </table> 

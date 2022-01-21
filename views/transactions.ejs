@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="/css/emp.css">
+
+
+<link rel="stylesheet" href="/css/user.css">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div id="container">
+
+<nav>
+ <div id="logo">
+  Payroll System
+ </div>
+ <ul>
+   <li><a href="/admin/home">Home</a></li>
+
+   <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="/admin/full">Add Academics</a></li>
+
+
+
+   <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="/admin/transactions">Transactions</a>
+   </li>
+   <li><a href="/admin/history">History</a></li>
+   <li><a href="/admin/attendence">Attendence</a></li>
+   <li><a href="/">Sign Out</a></li>
+ </ul>
+</nav>
+</div>
+
+
+
+
+
+
+  
+  <div class="row mt-5">
+    <div class="col-md-6 m-auto ">
+      <div class="card card-body form-login">
+        <h1 class="text-center mb-3">
+          Add Transactions
+        </h1>
+        <%-include('messages')%>
+        <form action="/admin/transactions" method="POST">
+        <div>
+          
+        </div>
+        <div class="form-group">
+            <label for="tid">Transaction Id</label>
+            <input
+              type="number"
+              id="tid"
+              name="tid"
+              class="form-control"
+              placeholder="Enter Transaction Id"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>  
+          <div class="form-group">
+              <label for="eid">Academic Id</label>
+              <input
+                type="number"
+                id="eid"
+                name="eid"
+                class="form-control"
+                placeholder="Enter Employee Id"
+                value="<%= typeof email != 'undefined' ? email : '' %>"
+              />
+            </div>
+            
+                <div class="form-group">
+                      <label for="month">Month</label>
+                      <input
+                        type="month"
+                        id="month"
+                        name="month"
+                        class="form-control"
+                        placeholder="Enter Month"
+                        value="<%= typeof name != 'undefined' ? name : '' %>"
+                        required
+                        />
+                    </div>
+                       
+          
+          <button type="submit" class="btn btn-primary btn-block">
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
